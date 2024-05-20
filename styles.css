@@ -37,3 +37,27 @@ canvas {
     background-image: url(photo.jpg);
     background-size: cover;
 }
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#cross-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cross-controls > div {
+    display: flex;
+}
+
+#cross-controls button {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+}

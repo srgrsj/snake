@@ -2,6 +2,11 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const startButton = document.getElementById('startButton');
+const upButton = document.getElementById('upButton');
+const downButton = document.getElementById('downButton');
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+const controls = document.getElementById('controls');
 
 let snake = [{ x: 200, y: 200 }];
 let direction = { x: 0, y: 0 };
@@ -13,10 +18,15 @@ let gameInterval = null;
 backgroundMusic.volume = 0.1;
 
 startButton.addEventListener('click', startGame);
+upButton.addEventListener('click', () => changeDirection({ keyCode: 38 }));
+downButton.addEventListener('click', () => changeDirection({ keyCode: 40 }));
+leftButton.addEventListener('click', () => changeDirection({ keyCode: 37 }));
+rightButton.addEventListener('click', () => changeDirection({ keyCode: 39 }));
 
 function startGame() {
     startButton.style.display = 'none';
     canvas.style.display = 'block';
+    controls.style.display = 'block';
     backgroundMusic.play();
     document.addEventListener('keydown', changeDirection);
     gameInterval = setInterval(update, 100);
@@ -43,18 +53,18 @@ function draw() {
 }
 
 function drawSnake() {
-    ctx.fillStyle = 'green';
+    ctx.fillStyle = '#2cbe4e';
     snake.forEach(part => {
         ctx.fillRect(part.x, part.y, 20, 20);
-        ctx.strokeStyle = '#003300';
+        ctx.strokeStyle = '#1b6d34';
         ctx.strokeRect(part.x, part.y, 20, 20);
     });
 }
 
 function drawFood() {
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = '#d73a49';
     ctx.fillRect(food.x, food.y, 20, 20);
-    ctx.strokeStyle = '#8B0000';
+    ctx.strokeStyle = '#b11a1f';
     ctx.strokeRect(food.x, food.y, 20, 20);
 }
 
@@ -133,4 +143,5 @@ function resetGame() {
     backgroundMusic.volume = 0.1;
     startButton.style.display = 'block';
     canvas.style.display = 'none';
+    controls.style.display = 'none';
 }

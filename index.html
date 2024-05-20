@@ -7,9 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>madk1d Snake Game</h1>
+    <h1>Snake Game</h1>
     <button id="startButton">Start Game</button>
     <canvas id="gameCanvas" width="400" height="400" style="display:none;"></canvas>
+    <div id="controls" style="display: none;">
+        <div id="cross-controls">
+            <button id="upButton">▲</button>
+            <div>
+                <button id="leftButton">◄</button>
+                <button id="downButton">▼</button>
+                <button id="rightButton">►</button>
+            </div>
+        </div>
+    </div>
     <audio id="backgroundMusic" loop>
         <source src="audio.mp3" type="audio/mp3">
         Your browser does not support the audio element.
