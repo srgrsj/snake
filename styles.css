@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #58a6ff;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: 1px solid #30363d;
+    background-color: #21262d;
+    color: #c9d1d9;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #30363d;
+}
+
+canvas {
+    border: 1px solid #30363d;
+    background-color: #161b22;
+    background-image: url(photo.jpg);
+    background-size: cover;
+}
